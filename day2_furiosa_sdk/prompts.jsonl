@@ -1,0 +1,4 @@
+{"id":"Q1","prompt":"NPU와 GPU의 차이를 한 문장으로 설명해줘."}
+{"id":"Q2","prompt":"LLM 추론의 prefill과 decode를 각각 한 문장으로 설명해줘."}
+{"id":"Q3","prompt":"KV 캐시가 필요한 이유를 초보자에게 설명해줘."}
+{"id":"Q4","prompt":"모델 가중치의 FP8과 BF16 크기 차이를 설명해줘."}

@@ -1,0 +1,26 @@
+# ── 환경 / 개인 설정 ─────────────────────────────
+.venv/
+__pycache__/
+*.pyc
+.vscode/
+# 조별 장치·포트 설정 (.env.example만 공개)
+.env
+!.env.example
+
+# ── 접속 정보가 들어 있는 파일 ─────────────────────
+# 교육 서버 주소, SSH 포트, 키 파일명, 노션 링크 포함
+day3_npu_api/DAY03_실습내용.md
+day3_npu_api/image.png
+benchmark-tool-simple/실습내용.md
+
+# ── 실행 결과 / 로그 ──────────────────────────────
+day2_furiosa_sdk/output_/
+day4_benchmark_test/results/
+day4_fxb_ex/logs/
+day4_fxb_ex/logs_old_*/
+**/vllm-result/
+**/old_results/
+
+# ── 외부 코드 ─────────────────────────────────────
+# 강사 제공 vLLM 소스(27MB). script_run.sh 옆에 별도로 배치해서 사용
+benchmark-tool-simple/benchmark-tool-simple/vllm/
