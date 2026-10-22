@@ -15,11 +15,10 @@ FuriosaAI **RNGD NPU**에서 `Qwen3-8B-FP8` 모델을 올리고, Python SDK 추�
 | [`day3_npu_api/`](day3_npu_api/) | OpenAI 호환 API | 서버 점검·기동 스크립트, `openai` SDK 클라이언트, Streaming 챗봇, 클라이언트 측 이력을 쓰는 Multi-turn 챗봇 |
 | [`day4_benchmark_test/`](day4_benchmark_test/) | 서빙 성능 측정 | `/metrics` 기반 동시성·Prefix cache 벤치마크, matplotlib·Streamlit 시각화 |
 | [`day4_fxb_ex/`](day4_fxb_ex/) | FXB(컴파일된 NPU 실행 번들) | `fxb` CLI로 캐시 조회·호환성 검사, Hugging Face의 FXB 목록 조회 |
-| [`benchmark-tool-simple/`](benchmark-tool-simple/) | vLLM 벤치마크 | 동시 요청 1~128 부하 테스트 스크립트, 결과 대시보드 |
 
 ## 동시 요청 부하 테스트 결과
 
-`benchmark-tool-simple/`의 `script_run.sh`로 측정했습니다. 입력과 출력을 1024 토큰으로 고정하고, 동시 요청 수만 바꿔 가며 각 구간에서 동시 요청 수의 3배만큼 요청을 보냈습니다. 모든 요청이 실패 없이 완료됐습니다.
+강사님이 제공한 Furiosa용 vLLM 벤치마크 도구(`benchmark_serving.py`)로 측정했습니다. 도구는 이 저장소에 포함하지 않았습니다. 입력과 출력을 1024 토큰으로 고정하고, 동시 요청 수만 바꿔 가며 각 구간에서 동시 요청 수의 3배만큼 요청을 보냈습니다. 모든 요청이 실패 없이 완료됐습니다.
 
 | 동시 요청 | TTFT (ms) | TPOT (ms) | 출력 처리량 (tok/s) | 요청/s | 평균 전력 (W) |
 |---:|---:|---:|---:|---:|---:|
@@ -61,10 +60,8 @@ source .env
 uv run 03_api_client.py        # 터미널 B: 모델 목록 확인 → Chat Completion 호출
 ```
 
-`benchmark-tool-simple`의 부하 테스트는 Furiosa용 vLLM 벤치마크 소스(`vllm/benchmarks/benchmark_serving.py`)가 `script_run.sh`와 같은 위치에 있어야 합니다. 외부 코드라 이 저장소에는 포함하지 않았습니다.
-
 ## 저장소에 포함하지 않은 것
 
 - 원시 벤치마크 결과(JSON/CSV)와 실행 로그. 위 표는 그 결과를 요약한 값입니다.
 - 실습 서버 접속 정보가 들어 있는 문서와 스크린샷, 개인별 `.env`
-- 가상환경(`.venv`)과 외부 vLLM 소스
+- 가상환경(`.venv`)과 강사 제공 벤치마크 도구(vLLM 소스 포함)

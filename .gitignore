@@ -14,13 +14,13 @@ day3_npu_api/image.png
 benchmark-tool-simple/실습내용.md
 
 # ── 실행 결과 / 로그 ──────────────────────────────
-day2_furiosa_sdk/output_/
+output_/
 day4_benchmark_test/results/
+day4_fxb_ex/artifacts/
 day4_fxb_ex/logs/
 day4_fxb_ex/logs_old_*/
 **/vllm-result/
 **/old_results/
 
-# ── 외부 코드 ─────────────────────────────────────
-# 강사 제공 vLLM 소스(27MB). script_run.sh 옆에 별도로 배치해서 사용
-benchmark-tool-simple/benchmark-tool-simple/vllm/
+# ── 강사 제공 벤치마크 도구 (vLLM 소스 포함) ───────
+benchmark-tool-simple/
